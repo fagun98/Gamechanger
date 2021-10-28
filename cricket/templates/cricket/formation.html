@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<meta charset="utf-8" />
+	<title>Formation</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<script>
+	function showHideBat(){
+		
+		if(document.getElementById('sbat_y').checked) { 
+		document.getElementById('s_rbat').style.display='none';
+		document.getElementById('s_lbat').style.display='none';
+		}
+			else {
+			document.getElementById('s_rbat').style.display='block';
+			document.getElementById('s_lbat').style.display='block';
+			}
+	}
+	
+	function showHidePBowl(){
+		
+		if(document.getElementById('spbowl_y').checked) { 
+		document.getElementById('rhp').style.display='none';
+		document.getElementById('lhp').style.display='none';
+		}
+			else {
+			document.getElementById('rhp').style.display='block';
+			document.getElementById('lhp').style.display='block';
+			}
+	}
+	
+	function showHideSBowl(){
+		
+		if(document.getElementById('ssbowl_y').checked) { 
+		document.getElementById('rhs').style.display='none';
+		document.getElementById('lhs').style.display='none';
+		}
+			else {
+			document.getElementById('rhs').style.display='block';
+			document.getElementById('lhs').style.display='block';
+			}
+	}
+	
+</script>
+	
+<style>
+body {
+  background-image: url({% static 'cricket/images/bg.jpg'%});
+	background-size: 100% 100%;
+}
+</style>
+</head>
+<body class="blurBg-false">
+	<img src="{% static 'cricket/images/homeiconw.png' %}" height="3%" width="3%">
+
+
+
+<!-- Start Formoid form-->
+<link rel="stylesheet" href="{% static 'cricket/formoid_files/formoid1/formoid-biz-green.css' %}" type="text/css" />
+<script type="text/javascript" src="{% static 'cricket/formoid_files/formoid1/jquery.min.js' %}"></script>
+<form class="formoid-biz-green" style="background-color:#232222;font-size:14px;font-family:'Open Sans','Helvetica Neue', 'Helvetica', Arial, Verdana, sans-serif;color:#ECECEC;max-width:480px;min-width:150px" method="POST"><div class="title"><h1 align="center">FORMATION</h1></div>
+	{% csrf_token %}
+	{{ form }}
+	<div class="element-select" title="Type of match "><label class="title"></label><div class="large"><span>
+		<p>Type of match</p>
+		
+	  <select name="type_of_match" id="type_of_match" required="required">
+
+		<option value="T20">T20</option>
+		<option value="Test">Test</option>
+		<option value="ODI">ODI</option></select><i></i></span></div></div>
+		
+			
+	<div class="element-separator"><hr><h3 class="section-break-title">Batsmen</h3></div>
+	
+	<div class="element-select" title="Number of batsmen "><label class="title"></label><div class="large"><span>
+		<p>Number of batsmen</p>
+		<select name="no_of_batsmen" id="no_of_batsmem" required="required">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-radio" title="Specify Batsmen"><label class="title">Specify Batsmen
+</label>	<div class="column column1"><label>
+		
+		<input type="checkbox" name="sbat_y" id="sbat_y" value="yes" onClick="showHideBat()" ><span>I don't want to specify</span></label></div><span class="clearfix"></span>
+</div>
+	
+	
+
+	<div class="element-select" title="Right-handed Batsmen" id="s_rbat"><label class="title"></label><div class="large"><span>
+		<p>Number of right handed batsmen</p>
+		<select name="right_batsmen" id="right_batsmen">
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-select" title="Left-handed Batsmen" id="s_lbat"><label class="title"></label><div class="large"><span>
+		<p>Number of left handed batsmen</p>
+		<select name="left_batsmen" id="left_batsmen">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-separator"><hr><h3 class="section-break-title">Bowlers</h3></div>
+	<div class="element-select" title="Number of pacers "><label class="title"></label><div class="large"><span>
+		<p>Number of pacers</p>
+		<select name="no_of_Pacer" id="no_of_Pacer">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-radio" title="Specify Pacers
+"><label class="title">Specify Pacers
+</label>	<div class="column column1"><label><input type="checkbox" name="s_bat" id="spbowl_y" value="yes" onClick="showHidePBowl()" ><span>I don't want to specify</span></label></div><span class="clearfix"></span>
+</div>
+	<div class="element-select" title="Right-handed Pacers " id="rhp"><label class="title"></label><div class="large"><span>
+		<p>Number of right handed pacers</p>
+		<select name="pacer_right" id="pacer_right">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-select" title="Left-handed Pacers " id="lhp"><label class="title"></label><div class="large"><span>
+		<p>Number of light handed pacers</p>
+		<select name="pacer_left" id="pacer_left">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-select" title="Number of spinners "><label class="title"></label><div class="large"><span>
+		<p>Number of spinners</p>
+		<select name="no_of_spinner" id="no_of_spinners">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-radio" title="Specify Spinners
+"><label class="title">Specify Spinners
+</label>		<div class="column column1"><label><input type="checkbox" name="s_sbowl" id="ssbowl_y" value="yes" onClick="showHideSBowl()" ><span>I don't want to specify</span></label></div><span class="clearfix"></span>
+</div>
+	<div class="element-select" title="Right-handed Spinners " id="rhs"><label class="title"></label><div class="large"><span>
+		<p>Number of right handed spinners</p>
+		<select name="spinner_left" id="spinner_left">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-select" title="Left-handed Spinners " id="lhs"><label class="title"></label><div class="large"><span>
+		<p>Number of left handed spinners</p>
+		<select name="spinner_left" id="spinner_left">
+
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+		<option value="6">6</option>
+		<option value="7">7</option></select><i></i></span></div></div>
+	<div class="element-separator"><hr><h3 class="section-break-title">Weeket-keepers</h3></div>
+	<div class="element-select" title="Number of wicket-keepers "><label class="title"></label><div class="large"><span>
+		<p>Number of wicket-keepers</p>
+		<select name="no_of_wicketkeeper" id="no_of_wicketkeeper">
+
+		<option value="1">1</option>
+		<option value="2">2</option></select><i></i></span></div></div>
+<div class="submit"><input type="submit" value="Submit"/></div></form><p class="frmd"><a href="http://formoid.com/v29.php">bootstrap form</a> Formoid.com 2.9</p><script type="text/javascript" src="formoid_files/formoid1/formoid-biz-green.js"></script>
+<!-- Stop form-->
+
+
+
+</body>
+</html>
