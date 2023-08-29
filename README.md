@@ -1,6 +1,6 @@
 # Game Changer - Super 11 Cricket Team Builder
 
-![Game Changer Logo]([project_logo.png](https://i.pinimg.com/564x/1a/e2/ea/1ae2ea6c0a447d05adea799b4264a774.jpg))
+<img src="https://i.pinimg.com/564x/1a/e2/ea/1ae2ea6c0a447d05adea799b4264a774.jpg" alt="Game Changer Logo" width="300" height="300">
 
 Welcome to **Game Changer**, the ultimate tool for cricket enthusiasts and team strategists! This Django-based web application allows you to analyze the past performance history of cricket players for each country and build your dream Super 11 cricket team. With a seamless integration of HTML, CSS, and JS for the frontend, along with a robust backend powered by Python and a MySQLite database, Game Changer empowers you to create winning combinations like never before.
 
